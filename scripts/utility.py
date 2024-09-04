@@ -767,6 +767,14 @@ def create_new_cat(
                 name = choice(names.names_dict["loner_names"])
                 if choice([1, 2]) == 1:
                     accessory = choice(Pelt.collars)
+                if choice([1, 2]) == 1:
+                    accessory = choice(Pelt.bandana_collars)
+                if choice([1, 2]) == 1:
+                    accessory = choice(Pelt.harness_accessories)
+                if choice([1, 2]) == 1:
+                    accessory = choice(Pelt.bows_accessories)
+                
+                    
             elif (
                     loner and choice([1, 2]) == 1
             ):  # try to give name from full loner name list
@@ -776,6 +784,12 @@ def create_new_cat(
                     names.names_dict["normal_prefixes"]
                 )  # otherwise give name from prefix list (more nature-y names)
 
+           # loner acc
+            if loner :
+                name = choice(names.names_dict["loner_names"])
+                if choice([1, 2]) == 1:
+                    accessory = choice(Pelt.dogteeth_collars)
+            
             # now we make the cats
             if new_name:  # these cats get new names
                 if choice([1, 2]) == 1:  # adding suffix to OG name
@@ -2661,7 +2675,23 @@ def generate_sprite(
                 )
             elif cat.pelt.accessory in cat.pelt.collars:
                 new_sprite.blit(
-                    sprites.sprites["collars" + cat.pelt.accessory + cat_sprite], (0, 0)
+                    sprites.sprites["collars" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.bandana_collars:
+                new_sprite.blit(
+                    sprites.sprites["bandanas" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.harness_accessories:
+                new_sprite.blit(
+                    sprites.sprites["harnesses" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.bows_accessories:
+                new_sprite.blit(
+                    sprites.sprites["bows" + cat.pelt.accessory + cat_sprite], (0, 0),
+                )
+            elif cat.pelt.accessory in cat.pelt.dogteeth_collars:
+                new_sprite.blit(
+                    sprites.sprites["teethcollars" + cat.pelt.accessory + cat_sprite], (0, 0),
                 )
 
         # Apply fading fog
