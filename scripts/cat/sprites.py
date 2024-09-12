@@ -431,19 +431,19 @@ class Sprites:
         # bandanas
         for row, bandanas in enumerate(bandanas_data):
             for col, bandana in enumerate(bandanas):
-                self.make_group('bandanas', (col, row), f'bandanas{bandana}')
+                self.make_group('bandanas', (col, row), f'acc_bandanas{bandana}')
         # harnesses
         for row, harnesses in enumerate(harnesses_data):
             for col, harness in enumerate(harnesses):
-                self.make_group('harnesses', (col, row), f'harnesses{harness}')
+                self.make_group('harnesses', (col, row), f'acc_harnesses{harness}')
         # bows (on ear and tail) 
         for row, bows in enumerate(bows_data):
             for col, bow in enumerate(bows):
-                self.make_group('bows', (col, row), f'bows{bow}')
+                self.make_group('bows', (col, row), f'acc_bows{bow}')
         # dog teeth collars
         for row, teethcollars in enumerate(dog_teeth_collars_data):
             for col, teethcollar in enumerate(teethcollars):
-                self.make_group('teethcollars', (col, row), f'teethcollars{teethcollar}')
+                self.make_group('teethcollars', (col, row), f'acc_teethcollars{teethcollar}')
 
     def load_symbols(self):
         """
