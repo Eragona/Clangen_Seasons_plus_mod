@@ -369,13 +369,13 @@ class HandleShortEvents:
         if "COLLAR" in possible_accs:
             acc_list.extend(pelts.collars)
         if "BANDANA" in possible_accs:
-            acc_list.extend(pelts.bandana_collars)
+            acc_list.extend(pelts.bandana_accessories)
         if "HARNESS" in possible_accs:
             acc_list.extend(pelts.harness_accessories)
         if "BOWS" in possible_accs:
             acc_list.extend(pelts.bows_accessories)
         if "TEETHDOGCOLLARS" in possible_accs:
-            acc_list.extend(pelts.dogteeth_collars)
+            acc_list.extend(pelts.dogteeth_accessories)
 
         for acc in possible_accs:
             if acc not in ["WILD", "PLANT", "COLLAR", "BANDANA", "HARNESS", "BOWS", "TEETHDOGCOLLARS"]:
