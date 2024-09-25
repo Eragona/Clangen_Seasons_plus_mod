@@ -2032,7 +2032,11 @@ class Cat:
             "GULL FEATHERS",
             "SPARROW FEATHERS",
             "CLOVER",
-            "DAISY"
+            "DAISY",
+            "SNAKE",
+            "OLD SILVER WATCH",
+            "OLD GOLD WATCH",
+            "BAUBLES"
         ]:
             self.pelt.accessory = None
         if "HALFTAIL" in self.pelt.scars and self.pelt.accessory in [
@@ -2042,7 +2046,11 @@ class Cat:
             "GULL FEATHERS",
             "SPARROW FEATHERS",
             "CLOVER",
-            "DAISY"
+            "DAISY",
+            "SNAKE",
+            "OLD SILVER WATCH",
+            "OLD GOLD WATCH",
+            "BAUBLES"
         ]:
             self.pelt.accessory = None
 
