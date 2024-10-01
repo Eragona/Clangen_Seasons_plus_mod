@@ -765,16 +765,11 @@ def create_new_cat(
             )
         else:
             # grab starting names and accs for loners/kittypets
+            
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if choice([1, 2]) == 1:
-                    accessory = choice(Pelt.collars)
-                if choice([1, 2]) == 1:
-                    accessory = choice(Pelt.bandana_accessories)
-                if choice([1, 2]) == 1:
-                    accessory = choice(Pelt.harness_accessories)
-                if choice([1, 2]) == 1:
-                    accessory = choice(Pelt.bows_accessories)
+                    accessory = choice([ choice(Pelt.collars), choice(Pelt.bandana_accessories), choice(Pelt.harness_accessories), choice(Pelt.bows_accessories) ])
 
             elif (
                 loner and choice([1, 2]) == 1
@@ -788,7 +783,7 @@ def create_new_cat(
           # loner acc
             if loner :
                 name = choice(names.names_dict["loner_names"])
-                if choice([1, 2]) == 1:
+                if choice([1, 0]) == 1:
                     accessory = choice(Pelt.dogteeth_accessories)
                 name = choice(names.names_dict["loner_names"])
             else:
