@@ -23,11 +23,11 @@
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "none", "warmdilute"],
-    "warm": ["yellow", "purple", "dilute", "cooldilute", "tan", "muddy", "darkmuddy", "rusty", "gold"],
-    "cool": ["purple", "black", "dilute", "tan", "crimson", "darkmuddy", "shadow", "rusty"],
-    "white": ["yellow", "tan", "ruby", "sand", "crimson", "shadow", "rusty"],
-    "monochrome": ["blue", "black", "dilute", "cooldilute", "tan", "ruby", "crimson", "darkmuddy", "shadow", "rusty"],
-    "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "tan", "ruby", "crimson", "darkmuddy", "shadow", "rusty"]
+    "warm": ["yellow", "purple", "dilute", "cooldilute"],
+    "cool": ["purple", "black", "dilute"],
+    "white": ["yellow"],
+    "monochrome": ["blue", "black", "dilute", "cooldilute"],
+    "brown": ["yellow", "purple", "black", "dilute", "cooldilute"]
   },
   "tint_colours":
   {
@@ -39,14 +39,6 @@
     "yellow": [250, 248, 225],
     "purple": [235, 225, 244],
     "blue": [218, 237, 245],
-    "tan": [114, 047, 000],
-    "ruby": [220, 103, 066],
-    "sand": [220, 191, 122],
-    "crimson": [129, 079, 070],
-    "darkmuddy": [090, 073, 032],
-    "shadow": [058, 049, 044],
-    "rusty": [146, 056, 003],
-    "gold": [207, 151, 072],
     "none": null
   },
   "dilute_tint_colours":

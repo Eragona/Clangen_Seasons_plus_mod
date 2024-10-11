@@ -200,7 +200,7 @@
 		]
 	},
 	"accessory_generation": {
-		"base_acc_chance": 80,
+		"base_acc_chance": 150,
 		"med_modifier": -80,
 		"baby_modifier": -20,
 		"elder_modifier": 20,
@@ -289,7 +289,7 @@
 		"war_injury_modifier": 100
 	},
 	"clan_creation": {
-		"rerolls": -1,
+		"rerolls": 3,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
