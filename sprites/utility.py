@@ -10,7 +10,7 @@ import logging
 import re
 from itertools import combinations
 from math import floor
-from random import choice, choices, randint, random, sample, randrange, getrandbits
+from random import choice, choices, randint, random, sample, randrange
 from sys import exit as sys_exit
 from typing import List, Tuple
 
@@ -390,7 +390,7 @@ def create_new_cat_block(
     elif "old_name" in attribute_list:
         new_name = False
     else:
-        new_name = bool(getrandbits(1))
+        new_name = choice([True, False])
 
     # STATUS - must be handled before backstories
     status = None
@@ -547,7 +547,7 @@ def create_new_cat_block(
             if new_name:
                 name = f"{chosen_cat.name.prefix}"
                 spaces = name.count(" ")
-                if bool(getrandbits(1)) and spaces > 0:  # adding suffix to OG name
+                if choice([1, 2]) == 1 and spaces > 0:  # adding suffix to OG name
                     # make a list of the words within the name, then add the OG name back in the list
                     words = name.split(" ")
                     words.append(name)
@@ -765,15 +765,13 @@ def create_new_cat(
             )
         else:
             # grab starting names and accs for loners/kittypets
-            
             if kittypet:
-                name = choice(names.names_dict["loner_names"
-
-                if bool(getrandbits(1)):
-                    accessory = choice(Pelt.collars), choice(Pelt.bandana_accessories), choice(Pelt.harness_accessories), choice(Pelt.bows_accessories)
+                name = choice(names.names_dict["loner_names"])
+                if choice([1, 2]) == 1:
+                    accessory = choice([ choice(Pelt.collars), choice(Pelt.bandana_accessories), choice(Pelt.harness_accessories), choice(Pelt.bows_accessories) ])
 
             elif (
-                loner and bool(getrandbits(1))
+                loner and choice([1, 2]) == 1
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -796,7 +794,7 @@ def create_new_cat(
             
             # now we make the cats
             if new_name:  # these cats get new names
-                if bool(getrandbits(1)):  # adding suffix to OG name
+                if choice([1, 2]) == 1:  # adding suffix to OG name
                     spaces = name.count(" ")
                     if spaces > 0:
                         # make a list of the words within the name, then add the OG name back in the list
@@ -1839,57 +1837,42 @@ def get_special_snippet_list(
 def find_special_list_types(text):
     """
     purely to identify which senses are being called for by a snippet abbreviation
-    returns adjusted text, sense list, list type, and cat_tag
+    returns adjusted text, sense list, and list type
     """
     senses = []
-    list_text = None
-    list_type = None
-    words = text.split(" ")
-    for bit in words:
-        if "_list" in bit:
-            list_text = bit
-            # just getting rid of pesky punctuation
-            list_text = list_text.replace(".", "")
-            list_text = list_text.replace(",", "")
-            break
-
-    if not list_text:
-        return text, None, None, None
-
-    parts_of_tag = list_text.split("/")
-
-    try:
-        cat_tag = parts_of_tag[1]
-    except IndexError:
-        cat_tag = None
-
-    if "omen_list" in list_text:
+    if "omen_list" in text:
         list_type = "omen_list"
-    elif "prophecy_list" in list_text:
+    elif "prophecy_list" in text:
         list_type = "prophecy_list"
-    elif "dream_list" in list_text:
+    elif "dream_list" in text:
         list_type = "dream_list"
-    elif "clair_list" in list_text:
+    elif "clair_list" in text:
         list_type = "clair_list"
-    elif "story_list" in list_text:
+    elif "story_list" in text:
         list_type = "story_list"
+    else:
+        return text, None, None
 
-    if "_sight" in list_text:
+    if "_sight" in text:
         senses.append("sight")
-    if "_sound" in list_text:
+        text = text.replace("_sight", "")
+    if "_sound" in text:
         senses.append("sound")
-    if "_smell" in list_text:
+        text = text.replace("_sight", "")
+    if "_smell" in text:
+        text = text.replace("_smell", "")
         senses.append("smell")
-    if "_emotional" in list_text:
+    if "_emotional" in text:
+        text = text.replace("_emotional", "")
         senses.append("emotional")
-    if "_touch" in list_text:
+    if "_touch" in text:
+        text = text.replace("_touch", "")
         senses.append("touch")
-    if "_taste" in list_text:
+    if "_taste" in text:
+        text = text.replace("_taste", "")
         senses.append("taste")
 
-    text = text.replace(list_text, list_type)
-
-    return text, senses, list_type, cat_tag
+    return text, senses, list_type
 
 
 def history_text_adjust(text, other_clan_name, clan, other_cat_rc=None):
@@ -2022,16 +2005,6 @@ def event_text_adjust(
         print("WARNING: Tried to adjust text, but no text was provided.")
 
     replace_dict = {}
-
-    # special lists - this needs to happen first for pronoun tag reasons
-    text, senses, list_type, cat_tag = find_special_list_types(text)
-    if list_type:
-        sign_list = get_special_snippet_list(
-            list_type, amount=randint(1, 3), sense_groups=senses
-        )
-        text = text.replace(list_type, str(sign_list))
-        if cat_tag:
-            text = text.replace("cat_tag", cat_tag)
 
     # main_cat
     if "m_c" in text:
@@ -2179,7 +2152,13 @@ def event_text_adjust(
     # prey lists
     text = adjust_prey_abbr(text)
 
-
+    # special lists
+    text, senses, list_type = find_special_list_types(text)
+    if list_type:
+        sign_list = get_special_snippet_list(
+            list_type, amount=randint(1, 3), sense_groups=senses
+        )
+        text = text.replace(list_type, str(sign_list))
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
