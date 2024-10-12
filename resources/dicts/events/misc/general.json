@@ -737,7 +737,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "r_c finds acc_plural while out on a walk and decides to give them to m_c.",
-    "new_accessory": ["WILD","PLANT","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","BUTTERFLIES"],
+    "new_accessory": ["WILD","PLANT"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -770,7 +770,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c finds acc_plural while out on a walk and decides to keep them.",
-    "new_accessory": ["WILD","PLANT", "BUTTERFLIES"],
+    "new_accessory": ["WILD","PLANT"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -783,7 +783,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "m_c was given acc_plural as a congratulations, r_c watches from the side with a jealous glint in {PRONOUN/r_c/poss} eyes.",
-    "new_accessory": ["WILD", "PLANT", "SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -809,7 +809,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c received a present, acc_plural, from r_c and decided to keep it with {PRONOUN/m_c/object} on {PRONOUN/m_c/poss} pelt.",
-    "new_accessory": ["WILD", "PLANT","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL","BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -835,7 +835,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "m_c decides to pick something to adorn {PRONOUN/m_c/poss} pelt as celebration.",
-    "new_accessory": ["WILD","PLANT", "SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL", "BUTTERFLIES"],
+    "new_accessory": ["WILD","PLANT"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -848,7 +848,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "r_c gives m_c something to adorn {PRONOUN/m_c/poss} pelt as congratulations.",
-    "new_accessory": ["WILD","PLANT","TEETH COLLAR", "BIRD SKULL"],
+    "new_accessory": ["WILD","PLANT"],
     "m_c":{
       "age": ["any"],
       "status": ["any"]
@@ -886,87 +886,8 @@
       "age": ["any"],
       "status": ["any"]
     }
-  
   },
   {
-    "event_id": "gen_misc_bone2",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["accessory"],
-    "weight": 20,
-    "event_text": "m_c noticed the leftovers on freshkill pile. {PRONOUN/m_c/subject/CAP} saw a acc_singular and out of curiosity put it on {PRONOUN/m_c/poss} fur.Then {PRONOUN/m_c/subject} looked at the surface of the puddle and decided that it suited {PRONOUN/m_c/object} perfectly.",
-    "new_accessory": ["RAT SKULL","FISH BONES","SNAKE","RIBS"],
-    "m_c":{
-      "age": ["any"],
-      "status": ["any"]
-    }
-  },
-  {
-    "event_id": "gen_misc_butterflymoth1",
-    "location": ["any"],
-    "season": ["newleaf","greenleaf"],
-    "sub_type": ["accessory"],
-    "weight": 20,
-    "event_text": "m_c notices an insect with beautiful wings. {PRONOUN/m_c/subject/CAP} catches it and decorates {PRONOUN/m_c/poss} ears with it.",
-    "new_accessory": ["BUTTERFLIES"],
-    "m_c":{
-      "age": ["any"],
-      "status": ["any"]
-    }
-  },
-  {
-    "event_id": "gen_misc_bone1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["accessory"],
-    "weight": 20,
-    "event_text": "m_c was on {PRONOUN/m_c/poss} morning patrol. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} about to return to camp, {PRONOUN/m_c/subject} noticed something in the bushes. It was a large acc_singular ! m_c liked it so much that {PRONOUN/m_c/subject} wanted to decorate {PRONOUN/m_c/poss} den with it. r_c helped {PRONOUN/m_c/object} carry it to camp.",
-    "new_accessory": ["DEER ANTLERS","OX SKULL","ROE SKULL","CANIDAE SKULL"],
-    "m_c":{
-      "age": ["adolescent", "young adult", "adult", "senior adult"],
-      "status": ["any"]
-    },
-    "r_c":{
-      "age": ["young adult", "adult", "senior adult"],
-      "status": ["any"]
-    },
-    "relationships": [
-        {
-          "cats_from": ["r_c"],
-          "cats_to": ["m_c"],
-          "mutual": true,
-          "values": ["platonic","comfort","respect"],
-          "amount": 5
-        }
-   ]
- }, 
- {
-    "event_id": "gen_misc_stuff1",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["accessory"],
-    "weight": 20,
-    "event_text": "m_c  was gone for a few days. When {PRONOUN/m_c/subject} finally returned m_c had a very specific smell and a strange object. m_c never explained where {PRONOUN/m_c/subject} been.",
-    "new_accessory": ["OLD SILVER WATCH", "OLD GOLD WATCH", "GOLDEN KEY"],
-    "m_c":{
-      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-      "status": ["any"]
-   }
- },
- {
-    "event_id": "gen_misc_stuff2",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["accessory"],
-    "weight": 20,
-    "event_text": "m_c returned to camp very late. {PRONOUN/m_c/poss/CAP} clanmates smelled the awful scent and moved away from {PRONOUN/m_c/object} . On top of that, m_c fur was all dirty and {PRONOUN/m_c/subject} carrying something. All m_c said was that {PRONOUN/m_c/subject} fallen into some black hole.",
-    "new_accessory": ["OLD PENCIL", "OLD BRUSH", "BANANA PEEL", "BROKEN VHS TAPE", "OLD NEWSPAPER", "MUD AND DIRT", "BAUBLES"],
-    "m_c":{
-      "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
-      "status": ["any"]
-   }
- },
- { 
     "event_id": "gen_misc_war_any_any1",
     "location": ["any"],
     "season": ["any"],
@@ -1190,7 +1111,7 @@
     "sub_type": ["accessory"],
     "weight": 15,
     "event_text": "m_c gives r_c a acc_singular to make up for a bad fight between them.",
-    "new_accessory": ["WILD", "PLANT", "BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult","senior"],
       "relationship_status": ["mates"]
@@ -1531,7 +1452,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "m_c caught an insect while sneaking outside of the camp and proudly wears its wings as a trophy of {PRONOUN/m_c/poss} journey.",
-        "new_accessory": ["MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "CICADA WINGS", "BLACK CICADA", "BUTTERFLIES"],
+        "new_accessory": ["MOTH WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "CICADA WINGS", "BLACK CICADA"],
         "m_c": {
           "status": ["kitten"]
         }
@@ -1567,7 +1488,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "m_c is just too cute - r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
-        "new_accessory": ["WILD", "PLANT", "BUTTERFLIES"],
+        "new_accessory": ["WILD", "PLANT"],
         "m_c": {
           "age": ["kitten"],
           "trait": ["sweet", "polite"]
@@ -1592,7 +1513,7 @@
         "sub_type": ["accessory"],
         "weight": 15,
         "event_text": "r_c gives m_c a pretty acc_singular {PRONOUN/r_c/subject} found while playing.",
-        "new_accessory": ["WILD", "PLANT", "BUTTERFLIES"],
+        "new_accessory": ["WILD", "PLANT"],
         "m_c": {
             "age": ["kitten"]
         },
@@ -1941,7 +1862,7 @@
     "sub_type": ["accessory"],
     "weight": 20,
     "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in {PRONOUN/m_c/poss} pelt.",
-    "new_accessory": ["WILD", "PLANT", "RAT SKULL"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "status": ["apprentice"]
     }
@@ -2594,7 +2515,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 10,
     "event_text": "r_c presents m_c with acc_plural as a congratulations.",
-    "new_accessory": ["WILD", "PLANT","TEETH COLLAR", "BIRD SKULL"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "status": ["medicine cat"]
     },
@@ -3698,7 +3619,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} child has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations.",
-    "new_accessory": ["WILD", "PLANT","RAT SKULL","TEETH COLLAR", "BIRD SKULL", "BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "status": ["any"],
       "relationship_status":["child/parent"]
@@ -3723,7 +3644,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "r_c is so proud of how far {PRONOUN/r_c/poss} kit has grown. With a look of pride, r_c presents m_c with acc_plural as a congratulations for becoming an apprentice.",
-    "new_accessory": ["WILD", "PLANT","SNAKE", "BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "status": ["apprentice"],
       "relationship_status":["child/parent"]
@@ -3855,7 +3776,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "m_c is feeling a bit overwhelmed, now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} an apprentice. Luckily, r_c is there with a gift of acc_plural and some comforting words to cheer m_c up.",
-    "new_accessory": ["WILD","PLANT", "BUTTERFLIES"],
+    "new_accessory": ["WILD","PLANT"],
     "m_c": {
       "status": ["apprentice"],
       "trait": ["nervous", "insecure"],
@@ -3979,7 +3900,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 20,
     "event_text": "As a new mentor, r_c wants to make a good initial impression on {PRONOUN/r_c/poss} apprentice, and after some careful consideration {PRONOUN/r_c/subject} {VERB/r_c/decide/decides} the best way is a gift. Taking m_c to the side, r_c gives {PRONOUN/m_c/object} acc_plural, telling {PRONOUN/m_c/object} with a soft voice that if m_c has any sort of issue then {PRONOUN/m_c/subject} can come to {PRONOUN/r_c/object} for help.",
-    "new_accessory": ["WILD", "PLANT","SNAKE","BAT WINGS","RAT SKULL","RIBS","FISH BONES","TEETH COLLAR", "BIRD SKULL", "BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
       "relationship_status":["app/mentor"]
@@ -4012,7 +3933,7 @@
     "sub_type": ["ceremony", "accessory"],
     "weight": 10,
     "event_text": "m_c yowls in shock, claws unsheathing from an unexpected weight pinning {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/are/is} able to get up, m_c's surprised and a bit upset to see that it had been {PRONOUN/m_c/poss} mentor who attacked {PRONOUN/m_c/object}. r_c doesn't seem to notice m_c's discomfort as {PRONOUN/r_c/subject} excitedly {VERB/r_c/tell/tells} m_c about the acc_plural that now adorns {PRONOUN/m_c/poss} pelt.",
-    "new_accessory": ["WILD", "PLANT", "SNAKE","BAT WINGS","RAT SKULL", "BUTTERFLIES"],
+    "new_accessory": ["WILD", "PLANT"],
     "m_c": {
       "status": ["apprentice", "medicine cat apprentice", "mediator apprentice"],
       "relationship_status":["app/mentor"]
@@ -4051,7 +3972,7 @@
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "sub_type": ["accessory"],
     "weight": 20,
-    "event_text":  "r_c found a little patch of acc_plural and decided to gift them to m_c",
+    "event_text":  "r_c found a little patch of acc_plural and decided to gift them to m_c.",
     "new_accessory": ["POPPY", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "LAVENDER", "HEATHER", "GORSE", "LILY OF THE VALLEY", "BLUEBELLS", "FORGET ME NOTS"],
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
@@ -4066,7 +3987,7 @@
     "season": ["newleaf","greenleaf"],
     "subtype": ["accessory", "romance"],
     "weight": 10,
-    "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as they see m_c wear the acc_singular {PRONOUN/r_c/subject} got {PRONOUN/m_c/object}",
+    "event_text": "Flowers can be so pretty, even before they bloom, just like m_c. r_c blushes as {PRONOUN/r_c/subject} {VERB/r_c/see/sees} m_c wear the acc_singular {PRONOUN/r_c/subject} got {PRONOUN/m_c/object}.",
     "new_accessory": ["BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE"],
     "m_c": {
       "age": ["young adult", "adult", "senior adult"]
@@ -4090,7 +4011,7 @@
     "season": ["any"],
     "tags": ["skill_trait_required"],
     "weight": 5,
-    "event_text": "m_c thinks starclan is trying to warn {PRONOUN/m_c/object} about r_c.",
+    "event_text": "m_c thinks StarClan is trying to warn {PRONOUN/m_c/object} about r_c.",
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["medicine cat"],
@@ -4116,11 +4037,10 @@
     "sub_type": ["accessory"],
     "weight": 10,
     "event_text": "A stray acc_singular in its last moments of life leads m_c to a new herb gathering spot {PRONOUN/m_c/subject} {VERB/m_c/have/has} never found before. It gives a final flutter before it gently descends to the ground. Is it a sign from StarClan, or a coincidence? m_c doesn't know, but {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to keep it with {PRONOUN/m_c/object} in its honor.",
-    "new_accessory": ["BLACK CICADA", "CICADA WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY", "BUTTERFLIES"],
+    "new_accessory": ["BLACK CICADA", "CICADA WINGS", "ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
     "m_c": {
       "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
       "status": ["medicine cat"]
     }
   }
-
 ]
