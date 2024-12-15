@@ -803,7 +803,7 @@ def create_new_cat(
         else:
             # grab starting names and accs for loners/kittypets
             
-           if kittypet:
+            if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
                     accessory = choice([ choice(Pelt.collars), choice(Pelt.bandana_accessories), choice(Pelt.harness_accessories), choice(Pelt.bows_accessories)]) 
@@ -827,7 +827,6 @@ def create_new_cat(
                 name = choice(
                     names.names_dict["normal_prefixes"]
                 ) 
-
 
             
             # now we make the cats
