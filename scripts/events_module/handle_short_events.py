@@ -12,7 +12,7 @@ from scripts.clan_resources.freshkill import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.events_module.relationship.relation_events import Relation_Events
+from scripts.events_module.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,
@@ -225,10 +225,6 @@ class HandleShortEvents:
                 trust=-30,
             )
 
-        # update gender
-        if self.chosen_event.new_gender:
-            self.handle_transition()
-
         # kill cats
         self.handle_death()
 
@@ -377,9 +373,17 @@ class HandleShortEvents:
             acc_list.extend(pelts.plant_accessories)
         if "COLLAR" in possible_accs:
             acc_list.extend(pelts.collars)
+        if "BANDANA" in possible_accs:
+            acc_list.extend(pelts.bandana_accessories)
+        if "HARNESS" in possible_accs:
+            acc_list.extend(pelts.harness_accessories)
+        if "BOWS" in possible_accs:
+            acc_list.extend(pelts.bows_accessories)
+        if "TEETHDOGCOLLARS" in possible_accs:
+            acc_list.extend(pelts.dogteeth_accessories)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ["WILD", "PLANT", "COLLAR", "BANDANA", "HARNESS", "BOWS", "TEETHDOGCOLLARS"]:
                 acc_list.append(acc)
 
         if hasattr(self.main_cat.pelt, "scars"):
@@ -393,25 +397,6 @@ class HandleShortEvents:
 
         if acc_list:
             self.main_cat.pelt.accessory = random.choice(acc_list)
-
-    def handle_transition(self):
-        """
-        handles updating gender_align and pronouns
-        """
-        possible_genders = getattr(self.chosen_event, "new_gender", [])
-
-        if possible_genders:
-            new_gender = random.choice(possible_genders)
-            self.main_cat.genderalign = new_gender
-
-            if new_gender == "nonbinary":
-                self.main_cat.pronouns = [self.main_cat.default_pronouns[0].copy()]
-            elif new_gender == "trans female":
-                self.main_cat.pronouns = [self.main_cat.default_pronouns[1].copy()]
-            elif new_gender == "trans male":
-                self.main_cat.pronouns = [self.main_cat.default_pronouns[2].copy()]
-            else:
-                print("No pronouns found for new_gender, keeping original pronouns.", new_gender)
 
     def handle_death(self):
         """

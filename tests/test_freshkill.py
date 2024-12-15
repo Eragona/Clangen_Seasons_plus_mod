@@ -1,9 +1,6 @@
-import os
 import unittest
-import ujson
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
+import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.skills import Skill, SkillPath
