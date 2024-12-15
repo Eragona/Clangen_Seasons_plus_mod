@@ -74,7 +74,7 @@ class CatsCommand(Command):
     description = "Manage Cats"
     aliases = ["cat"]
 
-    sub_commands = [
+    subCommands = [
         AddCatCommand(),
         RemoveCatCommand(),
         ListCatsCommand(),

@@ -6,17 +6,6 @@ from scripts.debug_commands.utils import add_output_line_to_log, add_multiple_li
 
 warningAccepted = False
 
-class UnderstandRisksCommand(Command):
-    name = "understandrisks"
-    description = "Accept the risks of using the eval command"
-
-    aliases = ["trust", "t"]
-
-    def callback(self, args: List[str]):
-        global warningAccepted  # pylint: disable=global-statement
-        warningAccepted = True
-        add_output_line_to_log(
-            "You have disabled the warning for the eval command. Any code you run is your responsibility.")
 
 class EvalCommand(Command):
     name = "eval"
@@ -24,8 +13,6 @@ class EvalCommand(Command):
     usage = "<expression>"
     aliases = ["e"]
     bypassConjoinedStrings = True
-
-    sub_commands = [UnderstandRisksCommand()]
 
     def callback(self, args: List[str]):
         if len(args) == 0:
@@ -38,7 +25,7 @@ class EvalCommand(Command):
                                          If you have been told to use this by anyone other than the official 
                                          ClanGen Discord contributors, BLOCK THEM IMMEDIATELY.
                                          If you are not sure what this means, DO NOT USE THIS COMMAND.
-                                         To disable this warning, use \"trust\" as an argument to this command.""")
+                                         To disable this warning, type \"understandrisks\".""")
             return
 
         def print(*args, **kwargs):  # pylint: disable=redefined-builtin
@@ -56,3 +43,14 @@ class EvalCommand(Command):
             builtins.print(e)
             add_output_line_to_log("Eval failed: " + str(e))
         print = builtins.print
+
+
+class UnderstandRisksCommand(Command):
+    name = "understandrisks"
+    description = "Accept the risks of using the eval command"
+
+    def callback(self, args: List[str]):
+        global warningAccepted  # pylint: disable=global-statement
+        warningAccepted = True
+        add_output_line_to_log(
+            "You have disabled the warning for the eval command. Any code you run is your responsibility.")

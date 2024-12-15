@@ -22,8 +22,8 @@
                "Is trying to teach r_c poisonous herbs in {PRONOUN/r_c/poss} dreams"
             ],
         "random_status_constraint": [
-          "medicine cat apprentice"
-        ],
+              "medicine cat apprrentice"
+            ],
         "random_living_status" : [
               "living"
             ]

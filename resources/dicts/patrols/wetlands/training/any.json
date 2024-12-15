@@ -725,7 +725,7 @@
         "biome": ["wetlands"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["romantic"],
+        "tags": ["romantic", "pos_jealousy"],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
