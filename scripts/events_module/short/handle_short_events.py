@@ -12,7 +12,7 @@ from scripts.clan_resources.freshkill import (
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.events_module.relationship.relation_events import Relation_Events
+from scripts.events_module.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     event_text_adjust,
@@ -377,9 +377,15 @@ class HandleShortEvents:
             acc_list.extend(pelts.plant_accessories)
         if "COLLAR" in possible_accs:
             acc_list.extend(pelts.collars)
+        if "BONE" in possible_accs:
+            acc_list.extend(pelts.bone_accessories)
+        if "BUTTERFLIES" in possible_accs:
+            acc_list.extend(pelts.butterflies_accessories)
+        if "STUFF" in possible_accs:
+            acc_list.extend(pelts.stuff_accessories)
 
         for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
+            if acc not in ["WILD", "PLANT", "COLLAR", "BONE", "BUTTERFLIES", "STUFF"]:
                 acc_list.append(acc)
 
         if hasattr(self.main_cat.pelt, "scars"):
