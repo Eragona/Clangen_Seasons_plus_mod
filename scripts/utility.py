@@ -7,6 +7,7 @@ TODO: Docs
 """  # pylint: enable=line-too-long
 
 import logging
+import os
 import re
 from itertools import combinations
 from math import floor
@@ -22,6 +23,7 @@ from pygame_gui.core import ObjectID
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
+    get_lang_config,
 )
 
 logger = logging.getLogger(__name__)
@@ -516,7 +518,13 @@ def create_new_cat_block(
             stor = []
             for story in bs_list:
                 if story in set(
-                    [backstory for backstory in BACKSTORIES["backstory_categories"]]
+                    [
+                        backstory
+                        for backstory_block in BACKSTORIES[
+                            "backstory_categories"
+                        ].values()
+                        for backstory in backstory_block
+                    ]
                 ):
                     stor.append(story)
                 elif story in BACKSTORIES["backstory_categories"]:
@@ -827,7 +835,10 @@ def create_new_cat(
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
-                    accessory = choice(Cat.pelt.collars)
+                    # TODO: refactor this entire function to remove this call amongst other things
+                    from scripts.cat.pelts import Pelt
+
+                    accessory = choice(Pelt.collars)
             elif loner and bool(
                 getrandbits(1)
             ):  # try to give name from full loner name list
@@ -1827,6 +1838,8 @@ def adjust_list_text(list_of_items) -> str:
         item2 = list_of_items[1]
     else:
         item1 = ", ".join(list_of_items[:-1])
+        if get_lang_config().get("oxford_comma"):
+            item1 += ","
         item2 = list_of_items[-1]
 
     return i18n.t("utility.items", count=len(list_of_items), item1=item1, item2=item2)
@@ -1960,6 +1973,9 @@ def find_special_list_types(text):
         list_type = "clair_list"
     elif "story_list" in list_text:
         list_type = "story_list"
+    else:
+        logger.error("WARNING: no list type found for %s", list_text)
+        return text, None, None, None
 
     if "_sight" in list_text:
         senses.append("sight")
@@ -2958,7 +2974,9 @@ def quit(savesettings=False, clearevents=False):
 
 
 with open(
-    f"resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
+    os.path.normpath("resources/dicts/conditions/permanent_conditions.json"),
+    "r",
+    encoding="utf-8",
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
@@ -2967,5 +2985,7 @@ langs = {"snippet": None, "prey": None}
 SNIPPETS = None
 PREY_LISTS = None
 
-with open(f"resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
+with open(
+    os.path.normpath("resources/dicts/backstories.json"), "r", encoding="utf-8"
+) as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
